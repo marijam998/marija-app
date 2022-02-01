@@ -1,0 +1,31 @@
+{
+  "person": [
+    {
+      "id": 1,
+      "Name": "John",
+      "Surename": "Anders",
+      "User type": "Employee",
+      "Created date": "1.2.2022",
+      "City": "New York",
+      "Adress": "Park ave"
+    },
+    {
+      "id": 2,
+      "Name": "Ann",
+      "Surename": "Watson",
+      "User type": "Programmer",
+      "Created date": "31.1.2022",
+      "City": "Olympia",
+      "Adress": "Black lake"
+    },
+    {
+      "id": 3,
+      "Name": "Susan",
+      "Surename": "Smitih",
+      "User type": "Employee",
+      "Created date": "2.2.2022",
+      "City": "New York",
+      "Adress": "Park ave"
+    }
+  ]
+}
