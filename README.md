@@ -1,3 +1,3 @@
-#My app
+# My app
 
 Some description
