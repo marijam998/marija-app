@@ -1,0 +1,49 @@
+{
+  "person": [
+    {
+      "id": 1,
+      "Name": "John",
+      "Surename": "Anders",
+      "Usertype": "Director",
+      "Created date": "1.2.2022",
+      "City": "New York",
+      "Adress": "Park ave"
+    },
+    {
+      "id": 2,
+      "Name": "Ann",
+      "Surename": "Watson",
+      "Usertype": "Programmer",
+      "Created date": "31.1.2022",
+      "City": "Olympia",
+      "Adress": "Black lake"
+    },
+    {
+      "id": 3,
+      "Name": "Sarrah",
+      "Surename": "Smitih",
+      "Usertype": "Manager",
+      "Created date": "2.2.2022",
+      "City": "New York",
+      "Adress": "Park ave"
+    },
+    {
+      "id": 4,
+      "Name": "Johanna",
+      "Surename": "Jones",
+      "Usertype": "Programmer",
+      "Created date": "2.2.2022",
+      "City": "New York",
+      "Adress": "Park ave"
+    },
+    {
+      "id": 5,
+      "Name": "Sam",
+      "Surename": "Parker",
+      "Usertype": "Manager",
+      "Created date": "2.2.2022",
+      "City": "New York",
+      "Adress": "Park ave"
+    }
+  ]
+}
