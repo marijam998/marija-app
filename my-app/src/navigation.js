@@ -8,7 +8,7 @@ class Nav extends React.Component {
             <div>
                 <ul >
                     <li >
-                        <a href="#">Home</a>
+                        <a href="http://localhost:3000/">Home</a>
                     </li>
                     <li>
                         <a href="#">About</a>
