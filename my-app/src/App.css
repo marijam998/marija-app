@@ -84,6 +84,23 @@ li a.active {
   color:rgb(84, 110, 160);
   font-weight: 500;
 }
+
+.btnDelete{
+  margin-left: 10px;
+  background-color: rgb(136, 161, 207);
+  border: 2px solid rgb(216, 231, 245);
+  color:rgb(255, 255, 255);
+  padding: 4px;
+  width: 30px;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 5px;
+}
+.btnDelete:hover {
+  background-color: rgb(216, 231, 245);
+  color:rgb(84, 110, 160);
+  font-weight: 500;
+}
 .label{
   padding-left: 5px;
   padding-right: 5px;

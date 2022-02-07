@@ -16,6 +16,7 @@ class Table extends React.Component {
                             <th>Created at</th>
                             <th>City</th>
                             <th>Adress</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -29,6 +30,9 @@ class Table extends React.Component {
                                     <td>{data.date}</td>
                                     <td>{data.city}</td>
                                     <td>{data.adress}</td>
+                                    <td>
+                                        <button className='btnDelete'>x</button>
+                                    </td>
                                 </tr>
                             )
                         })

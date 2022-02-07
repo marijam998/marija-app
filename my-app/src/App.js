@@ -43,7 +43,8 @@ class App extends React.Component {
     this.setState({
       filterData: this.state.data.filter((data) => {
         if (this.state.name && this.state.userType) {
-          return data.name.toLowerCase().startsWith(this.state.name.toLowerCase()) && data.userType === this.state.userType
+          return data.name.toLowerCase().startsWith(this.state.name.toLowerCase())
+            && data.userType === this.state.userType
         }
         if (this.state.name) {
           return data.name.toLowerCase().startsWith(this.state.name.toLowerCase())
@@ -55,7 +56,6 @@ class App extends React.Component {
       })
     })
   }
-
   render() {
     return (
       <div>
