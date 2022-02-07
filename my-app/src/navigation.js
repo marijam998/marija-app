@@ -8,13 +8,13 @@ class Nav extends React.Component {
             <div>
                 <ul >
                     <li >
-                        <a href="http://localhost:3000/">Home</a>
+                        <a className='active' href="http://localhost:3000/">Home</a>
                     </li>
                     <li>
-                        <a href="#">About</a>
+                        <a href="http://localhost:3000/">About</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="http://localhost:3000/">Contact</a>
                     </li>
                 </ul>
             </div>
