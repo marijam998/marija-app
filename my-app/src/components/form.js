@@ -1,6 +1,4 @@
 import React from "react";
-import './App.css';
-
 
 class Form extends React.Component {
 
@@ -34,12 +32,11 @@ class Form extends React.Component {
                                 <option value=''>Choose type...</option>
                                 {this.props.data.map((data) => {
                                     return data.userType
-                                }).reduce((prev, cur) => {
-                                    if (prev.indexOf(cur) === -1) {
-                                        prev.push(cur)
-                                    }
-                                    return prev
-                                }, []).map((userT) => { return <option value={userT}>{userT}</option> })
+                                }).filter((value, index) => {
+                                    return this.props.data.map((data) => {
+                                        return data.userType
+                                    }).indexOf(value) === index
+                                }).map((userT) => { return <option value={userT}>{userT}</option> })
                                 }
                             </select>
                         </label>

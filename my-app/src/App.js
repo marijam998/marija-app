@@ -1,9 +1,9 @@
 import './App.css';
 import React from 'react';
-import Form from "./form";
-import Table from "./table"
-import Nav from "./navigation";
-import Message from './Message';
+import Form from "./components/form";
+import Table from "./components/table"
+import Nav from "./components/navigation";
+import Message from './components/Message';
 
 class App extends React.Component {
   constructor(props) {
