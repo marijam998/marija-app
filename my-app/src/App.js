@@ -4,6 +4,7 @@ import Form from "./components/form";
 import Table from "./components/table"
 import Nav from "./components/navigation";
 import Message from './components/Message';
+import InputForm from './components/inputForm';
 
 class App extends React.Component {
   constructor(props) {
@@ -91,6 +92,7 @@ class App extends React.Component {
             : <Table filterData={this.state.filterData}
               onDelete={this.deleteUser} />
           }
+          <InputForm />
         </div>
       </div>
     );
