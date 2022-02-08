@@ -16,6 +16,9 @@ class App extends React.Component {
     }
   }
   componentDidMount() {
+    this.getUsers()
+  }
+  getUsers = () => {
     fetch('http://localhost:3001/person')
       .then(response => response.json())
       .then(content => {
@@ -56,6 +59,19 @@ class App extends React.Component {
       })
     })
   }
+  deleteUser = (id) => {
+    console.log(id)
+    fetch(`http://localhost:3001/person/${id}`, {
+      method: 'DELETE'
+    })
+      .then((result) => {
+        result.json()
+          .then((response) => {
+            console.warn(response)
+            this.getUsers()
+          })
+      })
+  }
   render() {
     return (
       <div>
@@ -72,7 +88,8 @@ class App extends React.Component {
           />
           {this.state.filterData.length === 0
             ? <Message />
-            : <Table filterData={this.state.filterData} />
+            : <Table filterData={this.state.filterData}
+              onDelete={this.deleteUser} />
           }
         </div>
       </div>

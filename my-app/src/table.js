@@ -3,6 +3,10 @@ import React from "react";
 
 class Table extends React.Component {
 
+    deleteRow = (id) => {
+        this.props.onDelete(id)
+    }
+
     render() {
         return (
             <div>
@@ -31,7 +35,7 @@ class Table extends React.Component {
                                     <td>{data.city}</td>
                                     <td>{data.adress}</td>
                                     <td>
-                                        <button className='btnDelete'>x</button>
+                                        <button className='btnDelete' onClick={() => { this.deleteRow(data.id) }}>x</button>
                                     </td>
                                 </tr>
                             )
