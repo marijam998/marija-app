@@ -4,7 +4,7 @@ class Nav extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='navBar'>
                 <ul >
                     <li >
                         <a className='active' href="http://localhost:3000/">Home</a>

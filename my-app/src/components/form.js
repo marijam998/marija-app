@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 
 class Form extends React.Component {
 
@@ -20,7 +21,7 @@ class Form extends React.Component {
     render() {
         return (
             <div>
-                <div className='formMain'>
+                <div>
                     <form className='form'>
                         <label className='label'>
                             Name:
@@ -42,6 +43,10 @@ class Form extends React.Component {
                         </label>
                         <button className='btn' type="submit" onClick={this.filterUsers}>Search</button>
                         <button className='btn' onClick={this.clearFilter}>Clear</button>
+                        <Link to="/add">
+                            <button className='btnAddUser' type="submit" >Add User</button>
+                        </Link>
+
                     </form>
                 </div>
             </div>
