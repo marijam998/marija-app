@@ -1,95 +1,93 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Form from "./form";
 import Table from "./table"
 import Message from './Message';
 
-class Home extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: '',
-            data: [],
-            filterData: [],
-            userType: ''
-        }
-    }
-    componentDidMount() {
-        this.getUsers()
-    }
-    getUsers = () => {
+
+const Home = () => {
+
+    const [name, setName] = useState('')
+    const [data, setData] = useState([])
+    const [filterData, setFilterData] = useState([])
+    const [userType, setUserType] = useState([])
+
+    useEffect(() => {
+        getUsers()
+    }, []);
+
+    const getUsers = () => {
         fetch('http://localhost:3001/person')
             .then(response => response.json())
             .then(content => {
-                this.setState({
-                    data: content,
-                    filterData: content
-                })
+                setData(content)
+                setFilterData(content)
             })
             .catch(err => console.error(err))
     }
-    changeName = (e) => {
-        this.setState({ name: e })
+    const changeName = (e) => {
+        setName(e)
     }
-    changeUserType = (e) => {
-        this.setState({ userType: e })
+
+    const changeUserType = (e) => {
+        setUserType(e)
     }
-    clearFilter = () => {
-        this.setState({
-            name: '',
-            filterData: this.state.data,
-            userType: ''
-        })
+
+    const clearFilter = () => {
+        setName('')
+        setUserType('')
+        setFilterData(data)
     }
-    filterUsers = () => {
-        this.setState({
-            filterData: this.state.data.filter((data) => {
-                if (this.state.name && this.state.userType) {
-                    return data.name.toLowerCase().startsWith(this.state.name.toLowerCase())
-                        && data.userType === this.state.userType
+
+    const filterUsers = () => {
+        setFilterData(
+            data.filter((data) => {
+                if (name && userType) {
+                    return data.name.toLowerCase().startsWith(name.toLowerCase())
+                        && data.userType === userType
                 }
-                if (this.state.name) {
-                    return data.name.toLowerCase().startsWith(this.state.name.toLowerCase())
+                if (name) {
+                    return data.name.toLowerCase().startsWith(name.toLowerCase())
                 }
-                if (this.state.userType) {
-                    return data.userType === this.state.userType
+                if (userType) {
+                    return data.userType === userType
                 }
                 return data
             })
-        })
+        )
     }
-    deleteUser = (id) => {
 
+    const deleteUser = (id) => {
         fetch(`http://localhost:3001/person/${id}`, {
             method: 'DELETE'
         })
             .then((result) => {
                 result.json()
-                    .then(() => {
-                        this.getUsers()
+                    .then((response) => {
+                        console.warn(response)
+                        getUsers()
                     })
             })
     }
-    render() {
-        return (
-            <div>
-                <div className="body">
-                    <Form name={this.state.name}
-                        onChangeName={this.changeName}
-                        userType={this.state.userType}
-                        onChangeUserType={this.changeUserType}
-                        data={this.state.data}
-                        onFilterUsers={this.filterUsers}
-                        onClearFilter={this.clearFilter}
-                    />
-                    {this.state.filterData.length === 0
-                        ? <Message />
-                        : <Table filterData={this.state.filterData}
-                            onDelete={this.deleteUser} />
-                    }
-                </div>
+
+    return (
+        <div>
+            <div className="body">
+                <Form name={name}
+                    onChangeName={changeName}
+                    userType={userType}
+                    onChangeUserType={changeUserType}
+                    data={data}
+                    onFilterUsers={filterUsers}
+                    onClearFilter={clearFilter}
+                />
+                {filterData.length === 0
+                    ? <Message />
+                    : <Table filterData={filterData}
+                        onDelete={deleteUser} />
+                }
             </div>
-        );
-    }
+        </div>
+    )
 }
 
-export default Home;
+export default Home

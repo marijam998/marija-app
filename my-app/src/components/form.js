@@ -1,58 +1,52 @@
 import React from "react";
 import { Link } from 'react-router-dom'
 
-class Form extends React.Component {
+const Form = ({ name, data, userType, onChangeName, onChangeUserType, onFilterUsers, onClearFilter }) => {
 
-    changeName = (e) => {
-        this.props.onChangeName(e.target.value)
+    const changeName = (e) => {
+        onChangeName(e.target.value)
     }
-    changeUserType = (e) => {
-        this.props.onChangeUserType(e.target.value)
+    const changeUserType = (e) => {
+        onChangeUserType(e.target.value)
     }
-    filterUsers = (ev) => {
+    const filterUsers = (ev) => {
         ev.preventDefault()
-        this.props.onFilterUsers()
+        onFilterUsers()
     }
-    clearFilter = (ev) => {
+    const clearFilter = (ev) => {
         ev.preventDefault()
-        this.props.onClearFilter()
+        onClearFilter()
     }
+    return (
+        <div>
+            <form className='form'>
+                <label className='label'>
+                    Name:
+                    <input className="input" type="text" value={name} onChange={changeName} />
+                </label>
+                <label className='label'>
+                    User type:
+                    <select className='select' value={userType} onChange={changeUserType}>
+                        <option value=''>Choose type...</option>
+                        {data.map((data) => {
+                            return data.userType
+                        }).filter((value, index) => {
+                            return data.map((data) => {
+                                return data.userType
+                            }).indexOf(value) === index
+                        }).map((userT) => { return <option value={userT}>{userT}</option> })
+                        }
+                    </select>
+                </label>
+                <button className='btn' type="submit" onClick={filterUsers}>Search</button>
+                <button className='btn' onClick={clearFilter}>Clear</button>
+                <Link to="/add">
+                    <button className='btnAddUser' type="submit" >Add User</button>
+                </Link>
 
-    render() {
-        return (
-            <div>
-                <div>
-                    <form className='form'>
-                        <label className='label'>
-                            Name:
-                            <input className="input" type="text" value={this.props.name} onChange={this.changeName} />
-                        </label>
-                        <label className='label'>
-                            User type:
-                            <select className='select' value={this.props.userType} onChange={this.changeUserType}>
-                                <option value=''>Choose type...</option>
-                                {this.props.data.map((data) => {
-                                    return data.userType
-                                }).filter((value, index) => {
-                                    return this.props.data.map((data) => {
-                                        return data.userType
-                                    }).indexOf(value) === index
-                                }).map((userT) => { return <option value={userT}>{userT}</option> })
-                                }
-                            </select>
-                        </label>
-                        <button className='btn' type="submit" onClick={this.filterUsers}>Search</button>
-                        <button className='btn' onClick={this.clearFilter}>Clear</button>
-                        <Link to="/add">
-                            <button className='btnAddUser' type="submit" >Add User</button>
-                        </Link>
-
-                    </form>
-                </div>
-            </div>
-        );
-    }
+            </form>
+        </div>
+    )
 }
 
-
-export default Form;
+export default Form

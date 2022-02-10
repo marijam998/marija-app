@@ -80,18 +80,6 @@
       "date": "4.7.2022",
       "city": "Atlanta",
       "adress": "Baker Street"
-    },
-    {
-      "id": 10
-    },
-    {
-      "name": "a",
-      "sureName": "B",
-      "userType": "C",
-      "date": "1",
-      "city": "2",
-      "adress": "3",
-      "id": 13
     }
   ]
 }
