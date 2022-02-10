@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 class Nav extends React.Component {
 
@@ -7,14 +8,18 @@ class Nav extends React.Component {
             <div className='navBar'>
                 <ul >
                     <li >
-                        <a className='active' href="http://localhost:3000/">Home</a>
+                        <Link to='/'>Home
+                        </Link>
                     </li>
-                    <li>
-                        <a href="http://localhost:3000/">About</a>
+                    <li >
+                        <Link to='/add'>Add user
+                        </Link>
                     </li>
-                    <li>
-                        <a href="http://localhost:3000/">Contact</a>
+                    <li >
+                        <Link to='/contact'>Contact
+                        </Link>
                     </li>
+
                 </ul>
             </div>
         );

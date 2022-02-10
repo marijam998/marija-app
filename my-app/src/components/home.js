@@ -58,14 +58,13 @@ class Home extends React.Component {
         })
     }
     deleteUser = (id) => {
-        console.log(id)
+
         fetch(`http://localhost:3001/person/${id}`, {
             method: 'DELETE'
         })
             .then((result) => {
                 result.json()
-                    .then((response) => {
-                        console.warn(response)
+                    .then(() => {
                         this.getUsers()
                     })
             })

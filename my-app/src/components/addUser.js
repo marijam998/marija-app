@@ -25,8 +25,8 @@ class AddUser extends React.Component {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(this.state)
-        }).then((result) => {
-            console.log(result)
+        }).then(() => {
+            window.location.replace('/')
         }
         )
     }
@@ -59,8 +59,11 @@ class AddUser extends React.Component {
                             Adress:
                             <input className="input2" name='adress' type="text" value={this.state.adress} onChange={this.changeInput} />
                         </label>
-                        <button className='btn2' type="submit" onClick={this.saveUser}>Save</button>
-                        <Link to="/home">
+                        <Link to='/'>
+                            <button className='btn2' type="submit" onClick={this.saveUser}>Save</button>
+                        </Link>
+
+                        <Link to="/">
                             <button className='btn' type="submit">Back</button>
                         </Link>
                     </form>

@@ -29,8 +29,7 @@ ul {
   background-color: rgb(112, 141, 194);
   width: 200px;
   height: 100%;
-  position: fixed;
-  overflow: auto;
+  position:absolute;
   font-weight: 700;
 }
 
@@ -95,7 +94,7 @@ li a.active {
 }
 
 .btn2{
-  margin-left: 10px;
+  margin-left: 50px;
   margin-top: 5px;
   background-color: rgb(112, 141, 194);
   border: 2px solid rgb(216, 231, 245);
