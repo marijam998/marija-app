@@ -4,6 +4,7 @@ import Home from './components/home';
 import Nav from './components/navigation';
 import AddUser from './components/addUser';
 import { Routes, Route } from 'react-router-dom';
+import AddUserHooks from './components/addUserHooks';
 
 
 class App extends React.Component {
@@ -16,7 +17,7 @@ class App extends React.Component {
         <Nav />
         <Routes >
           <Route path="/" element={<Home />} />
-          <Route path="/add" element={<AddUser />} />
+          <Route path="/add" element={<AddUserHooks />} />
         </Routes>
       </div>
     );
