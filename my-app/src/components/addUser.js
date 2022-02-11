@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const AddUserHooks = () => {
 
@@ -20,6 +20,7 @@ const AddUserHooks = () => {
             [e.target.name]: e.target.value
         })
     }
+
 
     const saveUser = (ev) => {
         ev.preventDefault()
@@ -65,10 +66,8 @@ const AddUserHooks = () => {
                         Adress:
                         <input className="input2" name='adress' type="text" value={input.adress} onChange={handleInputChange} />
                     </label>
-                    <button className='btn2' type="submit" onClick={saveUser}>Save</button>
-                    <Link to="/">
-                        <button className='btn' type="submit">Back</button>
-                    </Link>
+                    <button className='btnAdd' type="submit" onClick={saveUser}>Save</button>
+
                 </form>
             </div>
         </div>

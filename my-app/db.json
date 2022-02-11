@@ -5,36 +5,36 @@
       "name": "John",
       "sureName": "Anders",
       "userType": "Director",
-      "date": "1.2.2022",
-      "city": "New York",
-      "adress": "Park ave"
+      "date": "21.5.2022",
+      "city": "Los Angeles",
+      "adress": "Hollywood Boulevard"
     },
     {
       "id": 2,
       "name": "Ann",
       "sureName": "Watson",
       "userType": "Programmer",
-      "date": "31.1.2022",
-      "city": "Olympia",
-      "adress": "Black lake"
+      "date": "21.5.2022",
+      "city": "Los Angeles",
+      "adress": "Hollywood Boulevard"
     },
     {
       "id": 3,
       "name": "Sarah",
-      "sureName": "Smitih",
+      "sureName": "Smith",
       "userType": "Manager",
-      "date": "2.2.2022",
-      "city": "Chicago",
-      "adress": "Michigan Avenue"
+      "date": "21.5.2022",
+      "city": "Los Angeles",
+      "adress": "Hollywood Boulevard"
     },
     {
       "id": 4,
       "name": "Johanna",
       "sureName": "Jones",
       "userType": "Programmer",
-      "date": "7.11.2022",
-      "city": "San Francisco",
-      "adress": "Valencia Street"
+      "date": "21.5.2022",
+      "city": "Los Angeles",
+      "adress": "Hollywood Boulevard"
     },
     {
       "id": 5,
@@ -77,6 +77,15 @@
       "name": "Susan",
       "sureName": "Miller",
       "userType": "Programmer",
+      "date": "4.7.2022",
+      "city": "Atlanta",
+      "adress": "Baker Street"
+    },
+    {
+      "id": 10,
+      "name": "Mary",
+      "sureName": "Davis",
+      "userType": "Tester",
       "date": "4.7.2022",
       "city": "Atlanta",
       "adress": "Baker Street"

@@ -27,17 +27,14 @@ const Home = () => {
     const changeName = (e) => {
         setName(e)
     }
-
     const changeUserType = (e) => {
         setUserType(e)
     }
-
     const clearFilter = () => {
         setName('')
         setUserType('')
         setFilterData(data)
     }
-
     const filterUsers = () => {
         setFilterData(
             data.filter((data) => {
@@ -55,7 +52,6 @@ const Home = () => {
             })
         )
     }
-
     const deleteUser = (id) => {
         fetch(`http://localhost:3001/person/${id}`, {
             method: 'DELETE'
@@ -83,7 +79,10 @@ const Home = () => {
                 {filterData.length === 0
                     ? <Message />
                     : <Table filterData={filterData}
-                        onDelete={deleteUser} />
+                        onDelete={deleteUser}
+                    // onEdit={editUser}
+                    // editId={editUserId}
+                    />
                 }
             </div>
         </div>

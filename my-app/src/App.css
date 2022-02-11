@@ -21,7 +21,6 @@ h1{
   margin: 0px;
   font-weight: 600;
 }
-
 ul {
   list-style-type: none;
   margin: 0px;
@@ -139,7 +138,7 @@ li a.active {
   border: 2px solid rgb(216, 231, 245);
   color:rgb(255, 255, 255);
   padding: 4px;
-  width: 30px;
+  width: 50px;
   cursor: pointer;
   font-weight: 500;
   border-radius: 5px;
@@ -148,6 +147,43 @@ li a.active {
   background-color: rgb(216, 231, 245);
   color:rgb(84, 110, 160);
   font-weight: 500;
+}
+
+.btnEdit{
+  margin-left: 10px;
+  background-color: rgb(136, 161, 207);
+  border: 2px solid rgb(216, 231, 245);
+  color:rgb(255, 255, 255);
+  padding: 4px;
+  width: 50px;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 5px;
+}
+.btnEdit:hover {
+  background-color: rgb(216, 231, 245);
+  color:rgb(84, 110, 160);
+  font-weight: 500;
+}
+.btnAdd{
+  margin: auto;
+  margin-top: 5px;
+  background-color: rgb(136, 161, 207);
+  border: 2px solid rgb(216, 231, 245);
+  color:rgb(255, 255, 255);
+  width: 50px;
+  height: 25px;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 5px;
+}
+.btnAdd:hover {
+  background-color: rgb(216, 231, 245);
+  color:rgb(84, 110, 160);
+  font-weight: 500;
+}
+.inputEdit{
+  width: 110px
 }
 .App-link {
   color: #61dafb;

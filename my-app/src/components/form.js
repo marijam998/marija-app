@@ -22,7 +22,7 @@ const Form = ({ name, data, userType, onChangeName, onChangeUserType, onFilterUs
             <form className='form'>
                 <label className='label'>
                     Name:
-                    <input className="input" type="text" value={name} onChange={changeName} />
+                    <input className="input" placeholder="Type name..." type="text" value={name} onChange={changeName} />
                 </label>
                 <label className='label'>
                     User type:
