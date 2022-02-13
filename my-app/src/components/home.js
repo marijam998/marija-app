@@ -69,19 +69,19 @@ const Home = () => {
         <div>
             <div className="body">
                 <Form name={name}
-                    onChangeName={changeName}
-                    userType={userType}
-                    onChangeUserType={changeUserType}
                     data={data}
+                    userType={userType}
+                    onChangeName={changeName}
+                    onChangeUserType={changeUserType}
                     onFilterUsers={filterUsers}
                     onClearFilter={clearFilter}
                 />
                 {filterData.length === 0
                     ? <Message />
-                    : <Table filterData={filterData}
+                    : <Table
+                        filterData={filterData}
                         onDelete={deleteUser}
-                    // onEdit={editUser}
-                    // editId={editUserId}
+
                     />
                 }
             </div>

@@ -1,38 +1,38 @@
 import React from "react";
 
-const EditableRow = ({ data, handleEditDataChange, onCancleClick, saveEdit }) => {
+const EditableRow = ({ data, editData, handleDataChange, onCancleClick, saveEdit }) => {
 
     return (
         <tr>
             <td>{data.id}</td>
             <td>
-                <input className="inputEdit" defaultValue={data.name} type="text" required="required" name="name" placeholder="Enter name..." onChange={handleEditDataChange}>
+                <input className="inputEdit" defaultValue={editData.name} type="text" required="required" name="name" onChange={handleDataChange}>
                 </input>
             </td>
 
             <td>
-                <input className="inputEdit" defaultValue={data.sureName} type="text" required="required" name="sureName" placeholder="Enter surename..." onChange={handleEditDataChange}>
+                <input className="inputEdit" defaultValue={editData.sureName} type="text" required="required" name="sureName" onChange={handleDataChange}>
                 </input>
             </td>
 
             <td>
-                <input className="inputEdit" defaultValue={data.userType} type="text" required="required" name="userType" placeholder="Enter user type..." onChange={handleEditDataChange}>
+                <input className="inputEdit" defaultValue={editData.userType} type="text" required="required" name="userType" onChange={handleDataChange}>
                 </input>
             </td>
 
             <td>
-                <input className="inputEdit" defaultValue={data.date} type="text" required="required" name="date" placeholder="Enter date..." onChange={handleEditDataChange} >
+                <input className="inputEdit" defaultValue={editData.date} type="text" required="required" name="date" onChange={handleDataChange} >
                 </input>
             </td>
 
             <td>
-                <input className="inputEdit" defaultValue={data.city} type="text" required="required" name="city" placeholder="Enter city..." onChange={handleEditDataChange}>
+                <input className="inputEdit" defaultValue={editData.city} type="text" required="required" name="city" onChange={handleDataChange}>
                 </input>
 
             </td>
 
             <td>
-                <input className="inputEdit" defaultValue={data.adress} type="text" required="required" name="adress" placeholder="Enter adress..." onChange={handleEditDataChange} >
+                <input className="inputEdit" defaultValue={editData.adress} type="text" required="required" name="adress" onChange={handleDataChange} >
                 </input>
             </td>
             <td>

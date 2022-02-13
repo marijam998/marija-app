@@ -73,22 +73,13 @@
       "adress": "South Broadwayd"
     },
     {
-      "id": 9,
       "name": "Susan",
       "sureName": "Miller",
       "userType": "Programmer",
       "date": "4.7.2022",
       "city": "Atlanta",
-      "adress": "Baker Street"
-    },
-    {
-      "id": 10,
-      "name": "Mary",
-      "sureName": "Davis",
-      "userType": "Tester",
-      "date": "4.7.2022",
-      "city": "Atlanta",
-      "adress": "Baker Street"
+      "adress": "Baker Street",
+      "id": 9
     }
   ]
 }
