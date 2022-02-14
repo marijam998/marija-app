@@ -56,8 +56,7 @@ const Table = ({ filterData, onDelete }) => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(editData)
-        }).then((content) => {
-            console.log(content)
+        }).then(() => {
             window.location.reload()
 
         })

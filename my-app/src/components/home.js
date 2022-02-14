@@ -9,7 +9,7 @@ const Home = () => {
     const [name, setName] = useState('')
     const [data, setData] = useState([])
     const [filterData, setFilterData] = useState([])
-    const [userType, setUserType] = useState([])
+    const [userType, setUserType] = useState('')
 
     useEffect(() => {
         getUsers()

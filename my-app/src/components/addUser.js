@@ -21,7 +21,6 @@ const AddUserHooks = () => {
         })
     }
 
-
     const saveUser = (ev) => {
         ev.preventDefault()
         fetch('http://localhost:3001/person', {
@@ -33,7 +32,6 @@ const AddUserHooks = () => {
         }).then(() => {
             //window.location.replace('/')
             navigate('/')
-
         }
         )
     }
@@ -67,7 +65,6 @@ const AddUserHooks = () => {
                         <input className="input2" name='adress' type="text" value={input.adress} onChange={handleInputChange} />
                     </label>
                     <button className='btnAdd' type="submit" onClick={saveUser}>Save</button>
-
                 </form>
             </div>
         </div>
