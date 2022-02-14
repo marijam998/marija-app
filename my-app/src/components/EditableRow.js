@@ -6,7 +6,7 @@ const EditableRow = ({ data, editData, handleDataChange, onCancleClick, saveEdit
         <tr>
             <td>{data.id}</td>
             <td>
-                <input className="inputEdit" defaultValue={editData.name} type="text" required="required" name="name" onChange={handleDataChange}>
+                <input className="inputEdit" defaultValue={editData.name} type="text" placeholder={editData.name} required="required" name="name" onChange={handleDataChange}>
                 </input>
             </td>
             <td>
@@ -31,7 +31,7 @@ const EditableRow = ({ data, editData, handleDataChange, onCancleClick, saveEdit
                 </input>
             </td>
             <td>
-                <button type="submit" className='btnDelete' onClick={(ev) => saveEdit(ev, data.id)}>save</button>
+                <button type="submit" className='btnDelete' onClick={(ev) => { ev.preventDefault(); saveEdit(data.id) }}>save</button>
                 <button type="submit" className='btnDelete' onClick={onCancleClick}>cancel</button>
             </td>
         </tr>

@@ -2,27 +2,36 @@ import React, { useState, useEffect } from 'react';
 import Form from "./form";
 import Table from "./table"
 import Message from './Message';
-
+import Loading from './loading';
 
 const Home = () => {
-
     const [name, setName] = useState('')
     const [data, setData] = useState([])
     const [filterData, setFilterData] = useState([])
     const [userType, setUserType] = useState('')
+    const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
         getUsers()
     }, []);
 
     const getUsers = () => {
+        setIsLoading(true)
         fetch('http://localhost:3001/person')
             .then(response => response.json())
             .then(content => {
                 setData(content)
                 setFilterData(content)
+                setIsLoading(false)
             })
-            .catch(err => console.error(err))
+            .catch(err => {
+                setIsLoading(false)
+                console.error(err)
+            })
+    }
+
+    const dataIsChanged = () => {
+        getUsers()
     }
     const changeName = (e) => {
         setName(e)
@@ -52,19 +61,14 @@ const Home = () => {
             })
         )
     }
+
     const deleteUser = (id) => {
         fetch(`http://localhost:3001/person/${id}`, {
             method: 'DELETE'
+        }).then(() => {
+            getUsers()
         })
-            .then((result) => {
-                result.json()
-                    .then((response) => {
-                        console.warn(response)
-                        getUsers()
-                    })
-            })
     }
-
     return (
         <div>
             <div className="body">
@@ -78,11 +82,13 @@ const Home = () => {
                 />
                 {filterData.length === 0
                     ? <Message />
-                    : <Table
-                        filterData={filterData}
-                        onDelete={deleteUser}
+                    : isLoading ? <Loading /> :
+                        <Table
+                            filterData={filterData}
+                            deleteUser={deleteUser}
+                            dataIsChanged={dataIsChanged}
+                        />
 
-                    />
                 }
             </div>
         </div>

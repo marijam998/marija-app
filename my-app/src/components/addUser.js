@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const AddUserHooks = () => {
 
     const navigate = useNavigate()
-
+    const [data, setData] = useState([])
     const [input, setInput] = useState({
         name: '',
         sureName: '',
@@ -13,6 +13,19 @@ const AddUserHooks = () => {
         city: '',
         adress: ''
     })
+
+    useEffect(() => {
+        getUsers()
+    }, []);
+
+    const getUsers = () => {
+        fetch('http://localhost:3001/person')
+            .then(response => response.json())
+            .then(content => {
+                setData(content)
+            })
+            .catch(err => console.error(err))
+    }
 
     const handleInputChange = (e) => {
         setInput({
@@ -42,16 +55,26 @@ const AddUserHooks = () => {
                 <form className="addForm">
                     <label className='label2'>
                         Name:
-                        <input className="input2" name='name' type="text" value={input.name} onChange={handleInputChange} />
+                        <input className="input2" name='name' type="text" value={input.name} required onChange={handleInputChange} />
                     </label>
                     <label className='label2'>
                         Surename:
                         <input className="input2" name='sureName' type="text" value={input.sureName} onChange={handleInputChange} />
                     </label>
-                    <label className='label2'>
+                    <label className='label2' >
                         User type:
-                        <input className="input2" name='userType' type="text" value={input.userType} onChange={handleInputChange} />
-                    </label>
+                        <select className='select' name='userType' value={input.userType} onChange={handleInputChange}>
+                            <option value=''>Choose type...</option>
+                            {data.map((data) => {
+                                return data.userType
+                            }).filter((value, index) => {
+                                return data.map((data) => {
+                                    return data.userType
+                                }).indexOf(value) === index
+                            }).map((userT) => { return <option name='userType' value={userT}>{userT}</option> })
+                            }
+                        </select>
+                    </label> <br />
                     <label className='label2'>
                         Created at:
                         <input className="input2" name='date' type="text" value={input.date} onChange={handleInputChange} />

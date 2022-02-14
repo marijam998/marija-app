@@ -27,14 +27,14 @@ const Form = ({ name, data, userType, onChangeName, onChangeUserType, onFilterUs
                 <label className='label'>
                     User type:
                     <select className='select' value={userType} onChange={changeUserType}>
-                        <option value=''>Choose type...</option>
+                        <option key="default" value=''>Choose type...</option>
                         {data.map((data) => {
                             return data.userType
                         }).filter((value, index) => {
                             return data.map((data) => {
                                 return data.userType
                             }).indexOf(value) === index
-                        }).map((userT) => { return <option value={userT}>{userT}</option> })
+                        }).map((userT, i) => { return <option key={`${data.id}${i}`} value={userT}>{userT}</option> })
                         }
                     </select>
                 </label>

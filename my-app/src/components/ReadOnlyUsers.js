@@ -2,10 +2,6 @@ import React from "react";
 
 const ReadOnlyUsers = ({ data, onDeleteUser, editClick }) => {
 
-    const deleteUser = (id) => {
-        onDeleteUser(id)
-    }
-
     return (
         <tr key={data.id}>
             <td>{data.id}</td>
@@ -15,8 +11,8 @@ const ReadOnlyUsers = ({ data, onDeleteUser, editClick }) => {
             <td>{data.date}</td>
             <td>{data.city}</td>
             <td>{data.adress}</td>
-            < td >
-                <button className='btnDelete' onClick={() => deleteUser(data.id)}>delete</button>
+            <td>
+                <button className='btnDelete' onClick={(ev) => { ev.preventDefault(); onDeleteUser(data.id) }}>delete</button>
                 <button className='btnEdit' onClick={(event) => editClick(event, data)}>edit</button>
             </td>
         </tr>

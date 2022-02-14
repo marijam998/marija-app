@@ -2,15 +2,8 @@ import React, { Fragment, useState } from "react";
 import EditableRow from "./EditableRow";
 import ReadOnlyUsers from "./ReadOnlyUsers";
 
-
-const Table = ({ filterData, onDelete }) => {
-
-    const [editUserId, setEditUserId] = useState('')
-
-    const deleteUser = (id) => {
-        onDelete(id)
-    }
-
+const Table = ({ filterData, deleteUser, dataIsChanged }) => {
+    const [editUserId, setEditUserId] = useState(null)
     const [editData, setEditData] = useState({
         name: '',
         sureName: '',
@@ -45,20 +38,23 @@ const Table = ({ filterData, onDelete }) => {
     }
 
     const onCancleClick = () => {
-        setEditUserId('')
+        setEditUserId(null)
+    }
+    const changeData = () => {
+        dataIsChanged()
     }
 
-    const saveEdit = (ev, data) => {
-        ev.preventDefault()
+    const saveEdit = (data) => {
         fetch(`http://localhost:3001/person/${data}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(editData)
-        }).then(() => {
-            window.location.reload()
-
+        }).then((response) => {
+            console.log(response)
+            setEditUserId(null)
+            changeData()
         })
     }
 
@@ -81,7 +77,7 @@ const Table = ({ filterData, onDelete }) => {
                     <tbody>
                         {filterData.map((data) => {
                             return (
-                                <Fragment>
+                                <Fragment key={data.id}>
                                     {editUserId === data.id ? (
                                         <EditableRow
                                             handleDataChange={handleDataChange}
@@ -90,7 +86,7 @@ const Table = ({ filterData, onDelete }) => {
                                             onCancleClick={onCancleClick}
                                             saveEdit={saveEdit} />
                                     ) : (
-                                        <ReadOnlyUsers data={data} onDeleteUser={(id) => deleteUser(id)} editClick={editClick} />
+                                        <ReadOnlyUsers data={data} onDeleteUser={deleteUser} editClick={editClick} />
                                     )}
                                 </Fragment>
                             )
