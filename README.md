@@ -2,6 +2,10 @@
 
 Aplikacija za filtriranje osoba prema imenu i prema tipu user-a
 
-## Task 1
+## Pokretanje projekta
 
-Kreiranje repozitorijuma, clone-iranje, commit i push/pull.
+Pokreni server json-server --watch --port 3001  db.json
+
+Pokreni aplikaciju npm start
+
+
