@@ -1,20 +1,11 @@
 {
   "person": [
     {
-      "id": 1,
-      "name": "John",
-      "sureName": "Anders",
-      "userType": "Director",
-      "date": "21.5.2022",
-      "city": "Los Angeles",
-      "adress": "Hollywood Boulevard"
-    },
-    {
       "name": "Pera",
       "sureName": "Peric",
       "userType": "Tester",
       "date": "10.1.2012",
-      "city": "Trstenik",
+      "city": "Trsteni",
       "adress": "K.Milice 70/4",
       "id": 2
     },
@@ -35,15 +26,6 @@
       "city": "Kraljevo",
       "adress": "15",
       "id": 5
-    },
-    {
-      "name": "",
-      "sureName": "",
-      "userType": "",
-      "date": "",
-      "city": "",
-      "adress": "",
-      "id": 6
     }
   ]
 }

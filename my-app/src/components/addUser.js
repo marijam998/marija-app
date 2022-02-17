@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const AddUserHooks = () => {
 
     const navigate = useNavigate()
+
     const [data, setData] = useState([])
     const [input, setInput] = useState({
         name: '',

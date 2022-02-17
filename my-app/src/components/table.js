@@ -1,61 +1,14 @@
-import React, { Fragment, useState } from "react";
-import EditableRow from "./EditableRow";
+import React from "react";
 import ReadOnlyUsers from "./ReadOnlyUsers";
+import { useNavigate } from 'react-router-dom';
 
-const Table = ({ filterData, deleteUser, dataIsChanged }) => {
-    const [editUserId, setEditUserId] = useState(null)
-    const [editData, setEditData] = useState({
-        name: '',
-        sureName: '',
-        userType: '',
-        date: '',
-        city: '',
-        adress: '',
-    })
+const Table = ({ filterData, deleteUser }) => {
+
+    const navigate = useNavigate()
 
     const editClick = (ev, data) => {
-        ev.preventDefault();
-        setEditUserId(data.id)
-        setEditData({
-            name: data.name,
-            sureName: data.sureName,
-            userType: data.userType,
-            date: data.date,
-            city: data.city,
-            adress: data.adress,
-        })
-    }
-
-    const handleDataChange = (ev) => {
         ev.preventDefault()
-        console.log(ev)
-        setEditData(
-            {
-                ...editData,
-                [ev.target.name]: ev.target.value
-            }
-        )
-    }
-
-    const onCancleClick = () => {
-        setEditUserId(null)
-    }
-    const changeData = () => {
-        dataIsChanged()
-    }
-
-    const saveEdit = (data) => {
-        fetch(`http://localhost:3001/person/${data}`, {
-            method: "PATCH",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(editData)
-        }).then((response) => {
-            console.log(response)
-            setEditUserId(null)
-            changeData()
-        })
+        navigate('/edit', { state: { prop: data, id: data.id } })
     }
 
     return (
@@ -77,28 +30,18 @@ const Table = ({ filterData, deleteUser, dataIsChanged }) => {
                     <tbody>
                         {filterData.map((data) => {
                             return (
-                                <Fragment key={data.id}>
-                                    {editUserId === data.id ? (
-                                        <EditableRow
-                                            handleDataChange={handleDataChange}
-                                            editData={editData}
-                                            data={data}
-                                            onCancleClick={onCancleClick}
-                                            saveEdit={saveEdit} />
-                                    ) : (
-                                        <ReadOnlyUsers data={data} onDeleteUser={deleteUser} editClick={editClick} />
-                                    )}
-                                </Fragment>
+                                <ReadOnlyUsers key={data.id} data={data} onDeleteUser={deleteUser} editClick={editClick} />
+
+
                             )
                         })}
-
                     </tbody>
                 </table>
             </form>
-
-        </div >
-
+        </div>
     )
 }
+
+
 
 export default Table;
