@@ -1,6 +1,6 @@
 import React from "react";
 
-const ReadOnlyUsers = ({ data, onDeleteUser, editClick }) => {
+const TableRow = ({ data, onDeleteUser, editClick }) => {
 
     return (
         <tr key={data.id}>
@@ -12,11 +12,11 @@ const ReadOnlyUsers = ({ data, onDeleteUser, editClick }) => {
             <td>{data.city}</td>
             <td>{data.adress}</td>
             <td>
-                <button className='btnDelete' onClick={(ev) => { ev.preventDefault(); onDeleteUser(data.id) }}>delete</button>
+                <button className='btnEdit' onClick={(ev) => { ev.preventDefault(); onDeleteUser(data.id) }}>delete</button>
                 <button className='btnEdit' onClick={(event) => editClick(event, data)}>edit</button>
             </td>
         </tr>
     )
 }
 
-export default ReadOnlyUsers
+export default TableRow

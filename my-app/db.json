@@ -5,7 +5,7 @@
       "sureName": "Peric",
       "userType": "Tester",
       "date": "10.1.2012",
-      "city": "Trsteni",
+      "city": "Trstenik",
       "adress": "K.Milice 70/4",
       "id": 2
     },
@@ -14,7 +14,7 @@
       "sureName": "Bakic",
       "userType": "CTO",
       "date": "10.1.2012",
-      "city": "Beograd",
+      "city": "Novi Beograd",
       "adress": "Novi Beograd",
       "id": 4
     },
@@ -24,7 +24,7 @@
       "userType": "Programmer",
       "date": "10.1.2012",
       "city": "Kraljevo",
-      "adress": "15",
+      "adress": "25",
       "id": 5
     }
   ]

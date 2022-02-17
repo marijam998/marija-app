@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const AddUserHooks = () => {
 
@@ -44,7 +44,6 @@ const AddUserHooks = () => {
             },
             body: JSON.stringify(input)
         }).then(() => {
-            //window.location.replace('/')
             navigate('/')
         }
         )
@@ -52,7 +51,7 @@ const AddUserHooks = () => {
 
     return (
         <div>
-            <div>
+            <div >
                 <form className="addForm">
                     <label className='label2'>
                         Name:
@@ -89,6 +88,9 @@ const AddUserHooks = () => {
                         <input className="input2" name='adress' type="text" value={input.adress} onChange={handleInputChange} />
                     </label>
                     <button className='btnAdd' type="submit" onClick={saveUser}>Save</button>
+                    <Link to="/">
+                        <button className='btnBack' type="submit">Back</button>
+                    </Link>
                 </form>
             </div>
         </div>

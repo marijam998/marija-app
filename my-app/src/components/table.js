@@ -1,5 +1,5 @@
 import React from "react";
-import ReadOnlyUsers from "./ReadOnlyUsers";
+import TableRow from "./TableRow";
 import { useNavigate } from 'react-router-dom';
 
 const Table = ({ filterData, deleteUser }) => {
@@ -8,9 +8,8 @@ const Table = ({ filterData, deleteUser }) => {
 
     const editClick = (ev, data) => {
         ev.preventDefault()
-        navigate('/edit', { state: { prop: data, id: data.id } })
+        navigate('/edit', { state: { id: data.id } })
     }
-
     return (
         <div>
             <form>
@@ -30,9 +29,7 @@ const Table = ({ filterData, deleteUser }) => {
                     <tbody>
                         {filterData.map((data) => {
                             return (
-                                <ReadOnlyUsers key={data.id} data={data} onDeleteUser={deleteUser} editClick={editClick} />
-
-
+                                <TableRow key={data.id} data={data} onDeleteUser={deleteUser} editClick={editClick} />
                             )
                         })}
                     </tbody>

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Form from "./form";
-import Table from "./table"
+import Form from "./Form";
+import Table from "./Table"
 import Message from './Message';
-import Loading from './loading';
+import Loading from './Loading';
 
 const Home = () => {
     const [name, setName] = useState('')
@@ -88,7 +88,6 @@ const Home = () => {
                             deleteUser={deleteUser}
                             dataIsChanged={dataIsChanged}
                         />
-
                 }
             </div>
         </div>

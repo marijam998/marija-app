@@ -46,11 +46,11 @@ li a.active {
 }
 .form{
   margin-left: 30%;
-  padding-top: 20px;
+  padding-top: 30px;
 }
 .addForm {
   width:200px;
-  padding:20px;
+  padding:30px;
   padding-left: 50%;
 }
 .input{
@@ -60,6 +60,7 @@ li a.active {
 }
 .select{
   margin-left: 10px;
+  margin-top: 10px;
   padding: 3px;
   font-weight: 500;
   cursor: pointer;
@@ -129,23 +130,24 @@ li a.active {
 }
 .label2 {
   font-size: 16px;
-  
+  display: inline-block;
 }
 
-.btnDelete{
-  margin-left: 10px;
-  background-color: rgb(136, 161, 207);
+.btnBack{
+  margin-top: 5px;
+  margin-left: 70px;
+  background-color: rgb(216, 231, 245);
   border: 2px solid rgb(216, 231, 245);
-  color:rgb(255, 255, 255);
-  padding: 4px;
+  color:rgb(114, 141, 192);
   width: 50px;
+  height: 25px;
   cursor: pointer;
   font-weight: 500;
   border-radius: 5px;
 }
-.btnDelete:hover {
-  background-color: rgb(216, 231, 245);
-  color:rgb(84, 110, 160);
+.btnBack:hover {
+  background-color: rgb(136, 161, 207);;
+  color:rgb(255, 255, 255);
   font-weight: 500;
 }
 

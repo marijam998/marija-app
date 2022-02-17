@@ -1,10 +1,10 @@
 import './App.css';
 import React from 'react';
-import Home from './components/home';
-import Nav from './components/navigation';
+import Home from './components/Home';
+import Nav from './components/Navigation';
 import { Routes, Route } from 'react-router-dom';
-import AddUser from './components/addUser';
-import EditUser from './components/editUser';
+import AddUser from './components/AddUser';
+import EditUser from './components/EditUser';
 
 class App extends React.Component {
 
