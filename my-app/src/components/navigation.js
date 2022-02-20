@@ -6,17 +6,18 @@ class Nav extends React.Component {
     render() {
         return (
             <div className='navBar'>
-                <ul >
-                    <li >
+                <h1 className="app-header">Application</h1>
+                <ul>
+                    <li className='active'>
                         <Link to='/'>Home
                         </Link>
                     </li>
-                    <li >
+                    <li className='not-active'>
                         <Link to='/add'>Add user
                         </Link>
                     </li>
-                    <li >
-                        <Link to='/contact'>Contact
+                    <li className='not-active'>
+                        <Link to='/edit'>Edit user
                         </Link>
                     </li>
 

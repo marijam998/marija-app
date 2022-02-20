@@ -5,22 +5,22 @@ import Nav from './components/Navigation';
 import { Routes, Route } from 'react-router-dom';
 import AddUser from './components/AddUser';
 import EditUser from './components/EditUser';
+import Message from './components/Message';
 
 class App extends React.Component {
 
   render() {
-
     return (
       <div>
-        <h1 className="app-header">Application</h1>
         <Nav />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/add" element={<AddUser />} />
-          <Route path="/edit" element={<EditUser />} />
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/add" element={<AddUser />} />
+          <Route exact path="/edit/:id" element={<EditUser />} />
+          <Route exact path="*" element={<Message />} />
         </Routes>
       </div>
-    );
+    )
   }
 }
 

@@ -13,110 +13,115 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.body {
+margin-left: 230px;
+}
 
 h1{
-  background-color:rgb(167, 197, 225) ;
-  height: 50px;
+  background-color: #c63f17;
   padding: 6px;
   margin: 0px;
   font-weight: 600;
+  color: white;
 }
 ul {
   list-style-type: none;
   margin: 0px;
   padding: 0px;
-  background-color: rgb(112, 141, 194);
-  width: 200px;
+  background-color: #ffab91;
   height: 100%;
+  width: 200px;
   position:absolute;
   font-weight: 700;
+  overflow: auto;
+}
+.active {
+  background-color: #fa9576;
 }
 
 li a {
   display: block;
-  color: rgb(253, 252, 252);
+  color: black;
   padding: 8px 16px;
   text-decoration: none;
   text-align: center;
 }
-
-li a.active {
-  background-color: rgb(138, 164, 212);
-  color: white;
+p {
+  margin-top: 15px;
+  margin-left: 240px;
+  font-weight: 500;
+  color: #000000;
 }
-.form{
-  margin-left: 30%;
-  padding-top: 30px;
+
+.searchForm{
+  padding-top: 10px;
 }
 .addForm {
-  width:200px;
-  padding:30px;
-  padding-left: 50%;
+  margin-left: 230px;
+  width: 200px;
 }
-.input{
+.inputName{
   margin-left: 10px;
-  padding: 2px;
+  padding: 5px;
   width: 130px;
+  border-radius: 5px;
 }
 .select{
   margin-left: 10px;
   margin-top: 10px;
-  padding: 3px;
+  padding: 5px;
   font-weight: 500;
   cursor: pointer;
-}
-.option{
-  cursor: pointer;
+  border-radius: 5px;
 }
 .msg {
-  text-align: center;
+  margin-left: 230px;
 }
 .label{
   padding-left: 5px;
   padding-right: 5px;
   font-weight: 600;
 }
-.btn{
+.btnSearch{
   margin-left: 10px;
-  background-color: rgb(112, 141, 194);
-  border: 2px solid rgb(216, 231, 245);
-  color:rgb(255, 255, 255);
+  background-color: #ffddc1;
+  border: 2px solid #ffddc1;
+  color:black;
   padding: 4px;
   width: 70px;
   cursor: pointer;
   font-weight: 500;
   border-radius: 5px;
 }
-.btn:hover {
-  background-color: rgb(216, 231, 245);
-  color:rgb(84, 110, 160);
+.btnSearch:hover {
+  background-color: rgb(253, 252, 252);
+  border: 2px solid #ffddc1;
+  color:#0036A3; ;
   font-weight: 500;
 }
-
-.btn2{
-  margin-left: 50px;
-  margin-top: 5px;
-  background-color: rgb(112, 141, 194);
-  border: 2px solid rgb(216, 231, 245);
-  color:rgb(255, 255, 255);
-  padding: 5px;
+.btnClear{
+  margin-left: 10px;
+  background-color: #c63f17;
+  border: 2px solid #c63f17;
+  color:white;
+  padding: 4px;
   width: 70px;
   cursor: pointer;
   font-weight: 500;
   border-radius: 5px;
 }
-.btn2:hover {
-  background-color: rgb(216, 231, 245);
-  color:rgb(84, 110, 160);
+.btnClear:hover {
+  background-color: rgb(253, 252, 252);
+  border: 2px solid #c63f17;
+  color:#c63f17;
   font-weight: 500;
 }
-
 .btnAddUser{
   margin-left: 10px;
   margin-top: 5px;
-  background-color: rgb(253, 252, 252);
-  border: 1px solid rgb(112, 141, 194);
-  color:rgb(99, 128, 180);
+  background-color: #ffddc1;
+  border: 2px solid #ffddc1;
+  color:#000000; ;
   padding: 4px;
   width: 70px;
   cursor: pointer;
@@ -124,64 +129,90 @@ li a.active {
   border-radius: 5px;
 }
 .btnAddUser:hover {
-  background-color: rgb(112, 141, 194);
-  color:rgb(255, 255, 255);
+  background-color: #ffddc1;
+  color:white;
   font-weight: 500;
 }
-.label2 {
-  font-size: 16px;
+.labelForm {
+  font-size: 15px;
   display: inline-block;
+  margin: 5px;
 }
-
-.btnBack{
-  margin-top: 5px;
-  margin-left: 70px;
-  background-color: rgb(216, 231, 245);
-  border: 2px solid rgb(216, 231, 245);
-  color:rgb(114, 141, 192);
-  width: 50px;
-  height: 25px;
-  cursor: pointer;
-  font-weight: 500;
+.inputForm {
+  margin-left: 5px;
+  padding: 4px;
+  font-size: medium;
   border-radius: 5px;
 }
-.btnBack:hover {
-  background-color: rgb(136, 161, 207);;
-  color:rgb(255, 255, 255);
-  font-weight: 500;
-}
-
 .btnEdit{
   margin-left: 10px;
-  background-color: rgb(136, 161, 207);
-  border: 2px solid rgb(216, 231, 245);
-  color:rgb(255, 255, 255);
-  padding: 4px;
+  background-color: #a2bb9a;
+  border: 2px solid #a2bb9a;
+  color:white;
+  padding: 5px;
   width: 50px;
   cursor: pointer;
   font-weight: 500;
   border-radius: 5px;
 }
 .btnEdit:hover {
-  background-color: rgb(216, 231, 245);
-  color:rgb(84, 110, 160);
+  background-color: white;
+  color:#a2bb9a;
   font-weight: 500;
 }
-.btnAdd{
-  margin: auto;
+.buttons {
+  margin-left: 50px;
   margin-top: 5px;
-  background-color: rgb(136, 161, 207);
-  border: 2px solid rgb(216, 231, 245);
-  color:rgb(255, 255, 255);
+}
+.btnDelete{
+  margin-left: 10px;
+  background-color: #c63f17; 
+  border: 2px solid #c63f17;
+  color:white;
+  padding: 5px;
   width: 50px;
-  height: 25px;
   cursor: pointer;
   font-weight: 500;
   border-radius: 5px;
 }
-.btnAdd:hover {
-  background-color: rgb(216, 231, 245);
-  color:rgb(84, 110, 160);
+.btnDelete:hover {
+  background-color: white;
+  color:#c63f17;
+  font-weight: 500;
+  
+}
+.btnSave {
+  margin-top: 5px;
+  margin-left: 5px;
+  background-color: #a2bb9a;
+  border: 2px solid #a2bb9a;
+  color:white;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 5px;
+  padding: 5px;
+}
+.btnSave:hover {
+  background-color: white;
+  color:#a2bb9a;
+  border: 2px solid #a2bb9a;
+  font-weight: 500;
+}
+.btnBack{
+  margin-top: 5px;
+  margin-left: 5px;
+  background-color: #c65032;
+  border: 2px solid #c65032;
+  color:white;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 5px;
+  padding: 5px;
+}
+.btnBack:hover {
+  background-color: white;
+  color:#c65032;
+  border: 2px solid #c65032;
   font-weight: 500;
 }
 .inputEdit{
@@ -191,26 +222,24 @@ li a.active {
   color: #61dafb;
 }
 table {
-  margin-left: 30%;
   margin-top: 20px;
   border-collapse: collapse;
   
 }
 table, th, td {
   border:1px solid rgb(255, 255, 255);
-  padding: 6px;
+  padding: 8px;
 }
 th {
-  background-color: rgb(138, 164, 212);
-}
-
-thead {
-  background-color: rgb(42, 68, 94);
-  text-align: center;
-  font-weight: 600;
+  background-color: #c8e6c9;
+  color: black;
+  font-weight: 400;
+  font-size: 17px;
 }
 tr {
-  background-color: rgb(227, 237, 245);
+  background-color: rgb(255, 255, 255);
+  border-bottom: 2px solid #c8e6c9;
+  font-size: 16px;
 }
 .modal-wrapper {
   position: fixed;

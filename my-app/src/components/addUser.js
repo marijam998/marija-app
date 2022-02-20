@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 
-const AddUserHooks = () => {
-
-    const navigate = useNavigate()
-
+const AddUser = () => {
     const [data, setData] = useState([])
     const [input, setInput] = useState({
         name: '',
@@ -14,11 +11,11 @@ const AddUserHooks = () => {
         city: '',
         adress: ''
     })
+    const navigate = useNavigate()
 
     useEffect(() => {
         getUsers()
     }, []);
-
     const getUsers = () => {
         fetch('http://localhost:3001/person')
             .then(response => response.json())
@@ -27,14 +24,12 @@ const AddUserHooks = () => {
             })
             .catch(err => console.error(err))
     }
-
     const handleInputChange = (e) => {
         setInput({
             ...input,
             [e.target.name]: e.target.value
         })
     }
-
     const saveUser = (ev) => {
         ev.preventDefault()
         fetch('http://localhost:3001/person', {
@@ -51,50 +46,41 @@ const AddUserHooks = () => {
 
     return (
         <div>
-            <div >
-                <form className="addForm">
-                    <label className='label2'>
-                        Name:
-                        <input className="input2" name='name' type="text" value={input.name} required onChange={handleInputChange} />
-                    </label>
-                    <label className='label2'>
-                        Surename:
-                        <input className="input2" name='sureName' type="text" value={input.sureName} onChange={handleInputChange} />
-                    </label>
-                    <label className='label2' >
-                        User type:
-                        <select className='select' name='userType' value={input.userType} onChange={handleInputChange}>
-                            <option value=''>Choose type...</option>
-                            {data.map((data) => {
-                                return data.userType
-                            }).filter((value, index) => {
-                                return data.map((data) => {
-                                    return data.userType
-                                }).indexOf(value) === index
-                            }).map((userT) => { return <option name='userType' value={userT}>{userT}</option> })
-                            }
-                        </select>
-                    </label> <br />
-                    <label className='label2'>
-                        Created at:
-                        <input className="input2" name='date' type="text" value={input.date} onChange={handleInputChange} />
-                    </label>
-                    <label className='label2'>
-                        City:
-                        <input className="input2" name='city' type="text" value={input.city} onChange={handleInputChange} />
-                    </label>
-                    <label className='label2'>
-                        Adress:
-                        <input className="input2" name='adress' type="text" value={input.adress} onChange={handleInputChange} />
-                    </label>
-                    <button className='btnAdd' type="submit" onClick={saveUser}>Save</button>
-                    <Link to="/">
+            <div><p>Add user</p></div>
+            <form className="addForm">
+                <label className='labelForm'>Name: </label>
+                <input className="inputForm" name='name' type="text" value={input.name} required onChange={handleInputChange} />
+
+                <label className='labelForm'>Surename:</label>
+                <input className="inputForm" name='sureName' type="text" value={input.sureName} onChange={handleInputChange} />
+                <label className='labelForm'> User type:</label>
+                <select className='select' name='userType' value={input.userType} onChange={handleInputChange}>
+                    <option value=''>Choose type...</option>
+                    {data.map((data) => {
+                        return data.userType
+                    }).filter((value, index) => {
+                        return data.map((data) => {
+                            return data.userType
+                        }).indexOf(value) === index
+                    }).map((userT) => { return <option name='userType' value={userT}>{userT}</option> })
+                    }
+                </select>
+
+                <label className='labelForm'>Created at:</label>
+                <input className="inputForm" name='date' type="text" value={input.date} onChange={handleInputChange} />
+                <label className='labelForm'> City:</label>
+                <input className="inputForm" name='city' type="text" value={input.city} onChange={handleInputChange} />
+                <label className='labelForm'>Adress:</label>
+                <input className="inputForm" name='adress' type="text" value={input.adress} onChange={handleInputChange} />
+                <div className='buttons'>
+                    <button className='btnSave' type="submit" onClick={saveUser}>Save</button>
+                    <Link to='/'>
                         <button className='btnBack' type="submit">Back</button>
                     </Link>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
     )
 }
 
-export default AddUserHooks
+export default AddUser

@@ -1,14 +1,12 @@
 import React from "react";
-import TableRow from "./TableRow";
 import { useNavigate } from 'react-router-dom';
 
 const Table = ({ filterData, deleteUser }) => {
 
     const navigate = useNavigate()
-
     const editClick = (ev, data) => {
         ev.preventDefault()
-        navigate('/edit', { state: { id: data.id } })
+        navigate(`/edit/${data.id}`)
     }
     return (
         <div>
@@ -29,7 +27,19 @@ const Table = ({ filterData, deleteUser }) => {
                     <tbody>
                         {filterData.map((data) => {
                             return (
-                                <TableRow key={data.id} data={data} onDeleteUser={deleteUser} editClick={editClick} />
+                                <tr key={data.id}>
+                                    <td>{data.id}</td>
+                                    <td>{data.name}</td>
+                                    <td>{data.sureName}</td>
+                                    <td>{data.userType}</td>
+                                    <td>{data.date}</td>
+                                    <td>{data.city}</td>
+                                    <td>{data.adress}</td>
+                                    <td>
+                                        <button className='btnDelete' onClick={(ev) => { ev.preventDefault(); deleteUser(data.id) }}>delete</button>
+                                        <button className='btnEdit' onClick={(event) => editClick(event, data)}>edit</button>
+                                    </td>
+                                </tr>
                             )
                         })}
                     </tbody>
@@ -38,7 +48,5 @@ const Table = ({ filterData, deleteUser }) => {
         </div>
     )
 }
-
-
 
 export default Table;

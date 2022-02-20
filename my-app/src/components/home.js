@@ -5,16 +5,15 @@ import Message from './Message';
 import Loading from './Loading';
 
 const Home = () => {
-    const [name, setName] = useState('')
     const [data, setData] = useState([])
     const [filterData, setFilterData] = useState([])
+    const [name, setName] = useState('')
     const [userType, setUserType] = useState('')
     const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
         getUsers()
     }, []);
-
     const getUsers = () => {
         setIsLoading(true)
         fetch('http://localhost:3001/person')
@@ -29,20 +28,11 @@ const Home = () => {
                 console.error(err)
             })
     }
-
-    const dataIsChanged = () => {
-        getUsers()
-    }
     const changeName = (e) => {
         setName(e)
     }
     const changeUserType = (e) => {
         setUserType(e)
-    }
-    const clearFilter = () => {
-        setName('')
-        setUserType('')
-        setFilterData(data)
     }
     const filterUsers = () => {
         setFilterData(
@@ -61,7 +51,11 @@ const Home = () => {
             })
         )
     }
-
+    const clearFilter = () => {
+        setName('')
+        setUserType('')
+        setFilterData(data)
+    }
     const deleteUser = (id) => {
         fetch(`http://localhost:3001/person/${id}`, {
             method: 'DELETE'
@@ -70,26 +64,23 @@ const Home = () => {
         })
     }
     return (
-        <div>
-            <div className="body">
-                <Form name={name}
-                    data={data}
-                    userType={userType}
-                    onChangeName={changeName}
-                    onChangeUserType={changeUserType}
-                    onFilterUsers={filterUsers}
-                    onClearFilter={clearFilter}
-                />
-                {filterData.length === 0
-                    ? <Message />
-                    : isLoading ? <Loading /> :
-                        <Table
-                            filterData={filterData}
-                            deleteUser={deleteUser}
-                            dataIsChanged={dataIsChanged}
-                        />
-                }
-            </div>
+        <div className="body">
+            <Form name={name}
+                data={data}
+                userType={userType}
+                changeName={changeName}
+                changeUserType={changeUserType}
+                filterUsers={filterUsers}
+                clearFilter={clearFilter}
+            />
+            {filterData.length === 0
+                ? <Message />
+                : isLoading ? <Loading /> :
+                    <Table
+                        filterData={filterData}
+                        deleteUser={deleteUser}
+                    />
+            }
         </div>
     )
 }
