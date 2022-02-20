@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const Table = ({ filterData, deleteUser }) => {
 
     const navigate = useNavigate()
+
     const editClick = (ev, data) => {
         ev.preventDefault()
         navigate(`/edit/${data.id}`)

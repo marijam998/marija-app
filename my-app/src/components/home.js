@@ -7,9 +7,9 @@ import Loading from './Loading';
 const Home = () => {
     const [data, setData] = useState([])
     const [filterData, setFilterData] = useState([])
+    const [isLoading, setIsLoading] = useState(false)
     const [name, setName] = useState('')
     const [userType, setUserType] = useState('')
-    const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
         getUsers()
