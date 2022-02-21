@@ -40,7 +40,7 @@ li a {
   text-align: center;
 }
 .searchForm{
-  padding-top: 10px;
+  padding-top: 15px;
 }
 .label{
   padding-left: 5px;
@@ -60,6 +60,7 @@ li a {
   font-weight: 500;
   cursor: pointer;
   border-radius: 5px;
+  border: 2px solid black;
   width: 130px;
 }
 p {
@@ -216,6 +217,29 @@ tr {
   padding: 5px;
 }
 .btnSave:hover {
+  background-color: white;
+  color:#a2bb9a;
+  border: 2px solid #a2bb9a;
+  font-weight: 500;
+}
+.btnSave:disabled{
+  background-color: #b6b6b6;
+  color:white;
+  border: 2px solid #b6b6b6;
+  font-weight: 500;
+}
+.btnSaveAdd {
+  margin-top: 5px;
+  margin-left: 5px;
+  background-color: #a2bb9a;
+  border: 2px solid #a2bb9a;
+  color:white;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 5px;
+  padding: 5px;
+}
+.btnSaveAdd:hover {
   background-color: white;
   color:#a2bb9a;
   border: 2px solid #a2bb9a;

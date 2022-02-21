@@ -8,7 +8,6 @@ import EditUser from './components/EditUser';
 import Message from './components/Message';
 
 class App extends React.Component {
-
   render() {
     return (
       <div>

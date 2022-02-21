@@ -3,7 +3,10 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import Message from './Message';
 
 const EditUser = () => {
+    const isEqual = require("react-fast-compare");
+
     const [user, setUser] = useState({})
+    const [data, setData] = useState({})
     const navigate = useNavigate()
     const { id } = useParams()
 
@@ -16,6 +19,7 @@ const EditUser = () => {
             .then(response => response.json())
             .then(content => {
                 setUser(content)
+                setData(content)
             })
             .catch(err => {
                 console.log('error', err)
@@ -27,6 +31,7 @@ const EditUser = () => {
             [e.target.name]: e.target.value
         })
     }
+
     const saveEditData = (id) => {
         fetch(`http://localhost:3001/person/${id}`, {
             method: "PATCH",
@@ -58,7 +63,7 @@ const EditUser = () => {
                         <label className='labelForm'>Adress:</label>
                         <input className="inputForm" name='adress' type="text" defaultValue={user.adress} onChange={handleChange} />
                         <div className='buttons'>
-                            <button className='btnSave' type="submit" onClick={(ev) => { ev.preventDefault(); saveEditData(id) }}>Save</button>
+                            <button className='btnSave' type="submit" disabled={isEqual(user, data)} onClick={(ev) => { ev.preventDefault(); saveEditData(id) }}>Save</button>
                             <Link to='/'>
                                 <button className='btnBack' type="submit">Back</button>
                             </Link>

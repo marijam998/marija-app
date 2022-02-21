@@ -5,13 +5,13 @@
       "name": "John",
       "sureName": "Anders",
       "userType": "Director",
-      "date": "2022-01-01",
-      "city": "New York",
-      "adress": "Park ave"
+      "date": "2022-01-06",
+      "city": "Denver SA",
+      "adress": "Park"
     },
     {
       "id": 2,
-      "name": "Ann",
+      "name": "An",
       "sureName": "Watson",
       "userType": "Programmer",
       "date": "2022-05-05",

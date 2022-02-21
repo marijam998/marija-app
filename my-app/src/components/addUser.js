@@ -49,7 +49,6 @@ const AddUser = () => {
             <form className="addForm">
                 <label className='labelForm'>Name:</label>
                 <input className="inputForm" name='name' type="text" value={user.name} required onChange={handleChange} />
-
                 <label className='labelForm'>Surename:</label>
                 <input className="inputForm" name='sureName' type="text" value={user.sureName} onChange={handleChange} />
                 <label className='labelForm'>User type:</label>
@@ -71,7 +70,7 @@ const AddUser = () => {
                 <label className='labelForm'>Adress:</label>
                 <input className="inputForm" name='adress' type="text" value={user.adress} onChange={handleChange} />
                 <div className='buttons'>
-                    <button className='btnSave' type="submit" onClick={saveUser}>Save</button>
+                    <button className='btnSaveAdd' type="submit" onClick={saveUser}>Save</button>
                     <Link to='/'>
                         <button className='btnBack' type="submit">Back</button>
                     </Link>
