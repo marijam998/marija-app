@@ -61,7 +61,7 @@ const AddUser = () => {
                         return data.map((data) => {
                             return data.userType
                         }).indexOf(value) === index
-                    }).map((userT) => { return <option name='userType' value={userT}>{userT}</option> })
+                    }).map((userT, i) => { return <option key={`${data.id}${i}`} name='userType' value={userT}>{userT}</option> })
                     }
                 </select>
                 <label className='labelForm'>Created at:</label>
